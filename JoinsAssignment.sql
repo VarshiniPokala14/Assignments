@@ -343,6 +343,86 @@ group by c.course_name;
 
 ---------------------------------------------------------2>
 
+CREATE TABLE categories (
+    category_id INT PRIMARY KEY,
+    category_name VARCHAR(50)
+);
+
+CREATE TABLE lproducts (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR(100),
+    category_id INT,
+    price DECIMAL(10, 2)
+);
+
+CREATE TABLE lorders (
+    order_id INT PRIMARY KEY,
+    product_id INT,
+    quantity INT,
+    order_date DATE
+);
+
+INSERT INTO categories (category_id, category_name) VALUES
+(1, 'Electronics'),
+(2, 'Clothing'),
+(3, 'Books');
+
+INSERT INTO lproducts (product_id, product_name, category_id, price) VALUES
+(101, 'Laptop', 1, 1200.00),
+(102, 'Smartphone', 1, 800.00),
+(103, 'T-shirt', 2, 20.00),
+(104, 'Jeans', 2, 50.00),
+(105, 'Python Crash Course', 3, 25.00),
+(106, 'SQL for Beginners', 3, 30.00);
+
+
+INSERT INTO lorders (order_id, product_id, quantity, order_date) VALUES
+(1, 101, 2, '2024-05-15'),
+(2, 103, 5, '2024-05-18'),
+(3, 105, 3, '2024-05-20'),
+(4, 102, 1, '2024-05-22'),
+(5, 104, 2, '2024-05-25'),
+(6, 106, 4, '2024-05-28'),
+(7, 103, 3, '2024-06-05'),
+(8, 102, 2, '2024-06-10'),
+(9, 101, 3, '2024-05-03'),
+(10, 104, 1, '2024-05-05'),
+(11, 102, 2, '2024-05-07'),
+(12, 103, 4, '2024-05-10'),
+(13, 105, 2, '2024-05-12'),
+(14, 106, 1, '2024-05-15'),
+(15, 101, 1, '2024-05-18'),
+(16, 103, 3, '2024-05-20'),
+(17, 102, 1, '2024-05-23'),
+(18, 104, 2, '2024-05-25'),
+(19, 105, 4, '2024-05-28'),
+(20, 106, 2, '2024-05-30'),
+(21, 101, 2, '2024-06-02'),
+(22, 103, 3, '2024-06-05'),
+(23, 105, 1, '2024-06-08'),
+(24, 102, 4, '2024-06-12'),
+(25, 104, 3, '2024-06-15'),
+(26, 106, 1, '2024-06-18'),
+(27, 101, 3, '2024-06-20'),
+(28, 103, 2, '2024-06-22'),
+(29, 105, 3, '2024-06-25'),
+(30, 102, 1, '2024-06-28');
+
+-------------2 query
+select c.category_name,sum(lp.price * lo.quantity) as Revenue from 
+lorders lo 
+inner join lproducts lp on lo.product_id=lp.product_id
+join categories c on c.category_id=lp.category_id
+where datepart(month,lo.order_date) = datepart(month,getdate())-1
+group by c.category_name
+
+
+select c.category_name,sum(lp.price * lo.quantity) as Revenue from 
+lorders lo 
+inner join lproducts lp on lo.product_id=lp.product_id
+join categories c on c.category_id=lp.category_id
+group by c.category_name
+
 
 
 
