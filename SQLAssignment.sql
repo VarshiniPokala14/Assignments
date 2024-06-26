@@ -13,28 +13,18 @@ end
 select Isnull(@input,0) as Numeric
 
 ----2>
-select datediff(year,'2003-04-14',GetDate()) as Age
+select datediff(year,'2003-04-14',getdate()) as Age
+SELECT DATEDIFF(year, CONVERT(DATE, '14/04/2003', 103),getdate()) AS Age;
+select CONVERT(DATE, '14/04/2003',103) as date
 
 ---- 3>
 create table demo(id int,sname varchar(10),s1 int,div as s1/0);
 insert into demo values(1,'nbd',2),(2,'sfbjkmf',5)
 select id,sname,s1 from demo
 
-
-
 ---5>
 create table Emp(empid int,empname varchar(20),mngrid int);
-Insert into Emp values (1,'Rajesh',5 )
-Insert into Emp values (2,'Mahesh',8 )
-Insert into Emp values (3,'Satish', 8)
-Insert into Emp values (4,'Tilak',3 )
-Insert into Emp values (5,'Laxmi',8 )
-Insert into Emp values (6,'Siri',2 )
-Insert into Emp values (7,'Divya', 4)
-Insert into Emp values (8,'Bhargav', NULL)
-Insert into Emp values (9,'Satya',2 )
-Insert into Emp values (10,'Sumanth', 5)
-
+Insert into Emp values (1,'Rajesh',5 ),(2,'Mahesh',8 ),(3,'Satish', 8),(4,'Tilak',3 ),(5,'Laxmi',8 ),(6,'Siri',2 ),(7,'Divya', 4),(8,'Bhargav', NULL),(9,'Satya',2 ),(10,'Sumanth', 5)
 
 
 Declare @ID int =7;
@@ -56,8 +46,12 @@ Select E1.empid,E1.empname, ISNULL(E2.empname, 'No Boss') as ManagerName,E2.empi
 From EmpCTE E1
 LEFT Join EmpCTE E2
 ON E1.mngrid = E2.empid
+
 select * from Emp;
 
+select e1.empid,e1.empname,e2.empname as manager,1 as Hierarchy from Emp e1 join Emp e2 on e1.mngrid=e2.empid where e1.empid=7;
+
+---------
 
 ------4>
 CREATE TABLE CalenderTbl(
@@ -86,7 +80,3 @@ BEGIN
 END
 
 SELECT * FROM CalenderTbl;
-
-
-
-
