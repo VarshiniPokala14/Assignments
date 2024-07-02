@@ -48,13 +48,8 @@ select deptid,avg(salary) as Avrgsal,sum(salary) as Totalsal,min(salary) as Mins
 group by deptid
 having sum(salary)>= 2*avg(salary) and max(salary)>=3*min(salary)
 --------------------------------------------------------------------------------------------------
-
-select deptid from Emp3
-where (select sum(salary) from Emp3 group by deptid)>= 2*(select avg(salary) from Emp3 group by deptid) 
-and
-(select max(salary) from Emp3 group by deptid)>= 3*(select min(salary) from Emp3 group by deptid)
-----------------------------------------------------------------------------------------------------
-----4
+----------------------------------------------------------------------------------------------------5
+----5
 CREATE TABLE Emp4 (
   id INT ,
   name VARCHAR(255)
