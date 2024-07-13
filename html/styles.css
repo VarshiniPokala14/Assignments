@@ -1,0 +1,25 @@
+body{
+    margin:0;
+    padding:0;
+    background-image: url("https://c0.wallpaperflare.com/preview/918/1019/722/india-spiti-valley-trek-mountains.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+header{
+    padding:3px;
+    text-align:center;
+    color:white;
+    font:bold;
+    font-size:30px;
+}
+.logo{
+margin: 150px;;
+text-align:center;
+padding:30px;
+background-color:rgb(19, 92, 117);
+color:white;
+font-style: oblique;
+font-size:90px;
+border-radius:10px;
+}

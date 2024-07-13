@@ -1,0 +1,42 @@
+body{
+    margin:0;
+    padding:0;
+    background-image: url("https://harstuff-travel.org/wp-content/uploads/2019/03/LRM_EXPORT_929102018503574_20190214_142502283.jpeg");
+    filter:brightness(0.75);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.login-form{
+    margin:50px;
+    text-align:center;
+
+}
+.login-form h1{
+    margin:100px;
+    color:rgb(3, 29, 51);
+    text-align: center;
+}
+.login-form label {
+    color:aliceblue;
+    font:bold;
+    margin-bottom: 10px;
+    font-size:20px;
+    padding:100px;
+    
+}
+.login-form input{
+    padding :0px;
+    text-align:left;
+}
+.login-form input[type="submit"] {
+    color:black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.login-form input[type="submit"]:hover {
+    background-color:brown;
+}
