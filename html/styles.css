@@ -14,7 +14,10 @@ header{
     font-size:30px;
 }
 .logo{
-margin: 150px;;
+display:flex;
+flex-direction: row;
+margin: 150px;
+justify-items: normal;
 text-align:center;
 padding:30px;
 background-color:rgb(19, 92, 117);
