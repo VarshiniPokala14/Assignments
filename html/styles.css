@@ -14,15 +14,19 @@ header{
     font-size:30px;
 }
 .logo{
-display:flex;
-flex-direction: row;
-margin: 150px;
-justify-items: normal;
-text-align:center;
-padding:30px;
-background-color:rgb(19, 92, 117);
-color:white;
-font-style: oblique;
-font-size:90px;
-border-radius:10px;
+    display:flex;
+    flex-direction: row;
+    margin: 150px;
+    justify-items: normal;
+    text-align:center;
+    padding:20px;
+    background-color:rgb(19, 92, 117);
+    color:white;
+    font-style: oblique;
+    font-size:70px;
+    border-radius:10px;
+    border-style:double
+}
+.l1{
+    margin:20px;
 }

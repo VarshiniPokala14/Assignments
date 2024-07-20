@@ -9,8 +9,24 @@
 .images {
     display:flex; 
     flex-direction:row;
-    margin-right: 10px; 
+    margin: 30px; 
     justify-content: space-between;
     border-radius:5px;
   }
-  
+.treck{
+    display:flex;
+    flex-direction: row;
+    margin: 30px;
+    justify-items: normal;
+    padding:20px;
+    color:rgb(27, 19, 72);
+    font-style: oblique;
+    font-size:20px;
+}
+.places{
+    margin:10px;
+    color:whitesmoke;
+}
+.img{
+    margin:10px;
+}
